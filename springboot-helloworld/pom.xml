@@ -34,6 +34,7 @@
   
   <build>
     <plugins>
+      <!-- 5.配置默认的JDK版本 -->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
@@ -41,6 +42,7 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+      
      <!-- 3.war 打包 配置2 --> 
      <plugin>
         <artifactId>maven-war-plugin</artifactId>
