@@ -1,0 +1,7 @@
+server: #打包成war，发布到tomcat中时，以tomcat配置为准，此处server配置可能失效
+    port: 8088   
+    session.timeout : 30
+    tomcat.max-threads: 0
+    tomcat.uri-encoding: UTF-8
+cxf:
+    path: /
