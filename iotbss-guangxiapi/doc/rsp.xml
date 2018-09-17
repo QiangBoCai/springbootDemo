@@ -1,0 +1,28 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<UNI_BSS>
+			<UNI_HEAD>
+				<TRAN_ID>1111111111111</TRAN_ID>
+				<ORIG_DOMAIN>263</ORIG_DOMAIN>
+				<SERVICE_NAME>263_PayFee</SERVICE_NAME>
+				<ACTION_CODE>1</ACTION_CODE>
+				<RESPONSE>
+					<RSP_CODE>00000</RSP_CODE>
+					<RSP_DESC>成功</RSP_DESC>
+				</RESPONSE>
+			</UNI_HEAD>
+			<UNI_BODY>
+				<!--交易流水号 yyyMMddHHmmssSSSOperation Type-Sequence-->		
+				<transactionId></transactionId>
+				<!--响应操作代码，由服务端定义，0代表成功-->
+				<resultCode></resultCode>
+				<!--返回描述 ：eg OK-->
+				<resultStr></resultStr>
+				<!--充值Id-->
+				<orderId></orderId>
+				<!--对必选参数集合的加密token-->
+				<token></token>
+			</UNI_BODY>
+		</UNI_BSS>
+	</soapenv:Body>
+</soapenv:Envelope>

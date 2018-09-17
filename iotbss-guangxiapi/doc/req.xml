@@ -1,0 +1,28 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<UNI_BSS>
+			<UNI_HEAD>
+				<TRAN_ID>1111111111111</TRAN_ID>
+				<ORIG_DOMAIN>263</ORIG_DOMAIN>
+				<SERVICE_NAME>263_PayFee</SERVICE_NAME>
+　　		<ACTION_CODE>0</ACTION_CODE>
+			</UNI_HEAD>
+			<UNI_BODY>
+				<!--交易流水号 yyyMMddHHmmssSSSOperation Type-Sequence-->
+				<transactionId></transactionId>
+				<!--手机号码-->
+				<acc_nbr></acc_nbr>
+				<!--充值长辈-->
+        <charge_code></charge_code>
+				<!--金额 单位元-->
+				<fee></fee>
+				<!--过期时间yyyyMMddHHmmss-->
+				<expireDate></expireDate>
+				<!--完整性密钥 ：在首次订购时必选-->
+				<iKey></iKey>
+				<!--对必选参数集合的加密token-->
+				<token></token>
+			</UNI_BODY>
+		</UNI_BSS>
+	</soapenv:Body>
+</soapenv:Envelope>

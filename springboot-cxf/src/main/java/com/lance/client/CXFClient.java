@@ -6,6 +6,9 @@ import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 
 import com.lance.webservice.ICommonService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class CXFClient {
 	public static void main(String[] args) {
 		cl2();
@@ -18,7 +21,7 @@ public class CXFClient {
 		
 		try {
 			// 接口地址
-			String address = "http://localhost:8088/CommonService?wsdl";
+			String address = "http://localhost:8080/CommonService?wsdl";
 			// 代理工厂
 			JaxWsProxyFactoryBean jaxWsProxyFactoryBean = new JaxWsProxyFactoryBean();
 			// 设置代理地址
@@ -31,7 +34,7 @@ public class CXFClient {
 			String userName = "Leftso";
 			// 调用代理接口的方法调用并返回结果
 			String result = cs.sayHello(userName);
-			System.out.println("返回结果:" + result);
+			log.debug("返回结果:" + result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -43,15 +46,15 @@ public class CXFClient {
 	public static void cl2() {
 		// 创建动态客户端
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
-		Client client = dcf.createClient("http://localhost:8088/CommonService?wsdl");
+		Client client = dcf.createClient("http://localhost:8080/CommonService?wsdl");
 		// 需要密码的情况需要加上用户名和密码
 		// client.getOutInterceptors().add(new ClientLoginInterceptor(USER_NAME,
 		// PASS_WORD));
 		Object[] objects = new Object[0];
 		try {
 			// invoke("方法名",参数1,参数2,参数3....);
-			objects = client.invoke("sayHello", "Leftso");
-			System.out.println("返回数据:" + objects[0]);
+			objects = client.invoke("SAY_HELLO", "Leftso");
+			log.debug("返回数据:" + objects[0]);
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
 		}

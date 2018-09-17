@@ -3,7 +3,8 @@ package com.lance.client;
 
 import com.lance.utils.HttpClientSoapUtil;
 
-
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 public class HttpClientTest {
 	public static void main(String[] args){
 		String wsdl = "http://localhost:8088/CommonService?wsdl";
@@ -35,7 +36,7 @@ public class HttpClientTest {
 		soapReq.append("</soapenv:Envelope>");
 		
 		//httpclient发送soap请求
-		System.out.println("HttpClient 发送 SOAP请求");
+		log.debug("HttpClient 发送 SOAP请求");
 		HttpClientSoapUtil.doPostSoap1_1(wsdl, soapReq.toString(), SOAPAction);
 	}
 }

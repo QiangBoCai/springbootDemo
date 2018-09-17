@@ -6,11 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.lance.SpringBootCXFApplication;
+import com.lance.Application;
 
 @Controller
 public class HelloWorldController {
-	private static Logger logger = LoggerFactory.getLogger(SpringBootCXFApplication.class);
+	private static Logger logger = LoggerFactory.getLogger(Application.class);
 	
 	
 	@RequestMapping("/hello")

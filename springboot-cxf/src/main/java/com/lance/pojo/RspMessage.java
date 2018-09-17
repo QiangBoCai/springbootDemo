@@ -2,6 +2,14 @@ package com.lance.pojo;
 
 import java.io.Serializable;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class RspMessage implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -19,49 +27,4 @@ public class RspMessage implements Serializable {
 	//token
 	private String token = "";//对必选参数集合的加密toke
 
-	
-	public String getTransactionId() {
-		return transactionId;
-	}
-
-	public void setTransactionId(String transactionId) {
-		this.transactionId = transactionId;
-	}
-
-	public String getResultCode() {
-		return resultCode;
-	}
-
-	public void setResultCode(String resultCode) {
-		this.resultCode = resultCode;
-	}
-
-	public String getResultStr() {
-		return resultStr;
-	}
-
-	public void setResultStr(String resultStr) {
-		this.resultStr = resultStr;
-	}
-
-	public String getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
-
-	public User getUser() {
-		return user;
-	
-	
 }
