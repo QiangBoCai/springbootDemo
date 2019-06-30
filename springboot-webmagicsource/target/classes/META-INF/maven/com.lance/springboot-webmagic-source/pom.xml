@@ -1,0 +1,159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.0.RELEASE</version>
+  </parent>
+  <groupId>com.lance</groupId>
+  <artifactId>springboot-webmagic-source</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>springboot-webmagicsource</name>
+  <description>springboot-webmagicsource</description>
+  
+  <dependencies>
+  	  		
+  		<dependency><!-- Spring Boot web工程依赖 -->  
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+        <!--spring boot tomcat（默认可以不用配置，但当需要把当前web应用布置到外部servlet容器时就需要配置，并将scope配置为provided）-->
+	    <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- 配置 lombok-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope> 
+		</dependency>
+		
+		<!-- springboot test -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-api</artifactId>
+		    <version>3.8.1</version>
+		    <scope>compile</scope>
+   		 </dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+			<version>3.8.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>3.8.1</version>
+			<scope>compile</scope>
+		</dependency>
+	    <dependency>
+	      <groupId>com.mchange</groupId>
+	      <artifactId>c3p0</artifactId>
+	      <version>0.9.5.2</version>
+	      <scope>compile</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>com.google.code.maven-play-plugin.com.mchange</groupId>
+	      <artifactId>c3p0-oracle-thin-extras</artifactId>
+	      <version>0.9.5</version>
+	      <scope>compile</scope>
+	    </dependency>
+		 <!-- 配置ojdbc6 for oracle11g -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.2.0</version>
+		</dependency>
+		<dependency>
+		  <groupId>mysql</groupId>
+		  <artifactId>mysql-connector-java</artifactId>
+		  <version>6.0.6</version>
+		  <scope>compile</scope>
+		</dependency>
+	    <dependency>
+	      <groupId>org.apache.httpcomponents</groupId>
+	      <artifactId>httpcore</artifactId>
+	      <version>4.4.4</version>
+	      <scope>compile</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>com.alibaba</groupId>
+	      <artifactId>fastjson</artifactId>
+	      <version>1.2.44</version>
+	      <scope>compile</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>org.jsoup</groupId>
+	      <artifactId>jsoup</artifactId>
+	      <version>1.11.2</version>
+	      <scope>compile</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>us.codecraft</groupId>
+	      <artifactId>xsoup</artifactId>
+	      <version>0.3.1</version>
+	      <scope>compile</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>org.slf4j</groupId>
+	      <artifactId>slf4j-log4j12</artifactId>
+	      <version>1.7.25</version>
+	      <scope>compile</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>commons-collections</groupId>
+	      <artifactId>commons-collections</artifactId>
+	      <version>3.2.2</version>
+	      <scope>compile</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>redis.clients</groupId>
+	      <artifactId>jedis</artifactId>
+	      <version>2.9.0</version>
+	      <scope>compile</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>com.github.dreamhead</groupId>
+	      <artifactId>moco-core</artifactId>
+	      <version>0.11.0</version>
+	      <scope>compile</scope>
+	    </dependency>
+
+		
+		
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <!-- war 打包 -->
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <version>3.1</version>
+          <!-- 忽略找不到web.xml的错误 -->
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+     </plugin>
+     
+    </plugins>
+  </build>
+</project>
